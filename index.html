@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="en">
     <head> 
         <title> </title>
@@ -10,13 +10,15 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="../css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
-        <script src="./node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
-        <script src="./node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
-        <script src="./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+
+        <!-- <script src="./node_modules/@fortawesome/fontawesome&#45;free/js/brands.js"></script> -->
+        <!-- <script src="./node_modules/@fortawesome/fontawesome&#45;free/js/solid.js"></script> -->
+        <!-- <script src="./node_modules/@fortawesome/fontawesome&#45;free/js/fontawesome.js"></script> -->
         <script>
         $(document).ready(function() {
             $('#example').DataTable({
@@ -27,6 +29,15 @@
             });
         } );
         </script>
+        <style>
+            .material-icons{
+                vertical-align:-6px;
+            }
+            .btn-group .nav-link:hover .material-icon{
+                background-color:#fff !important;
+            }
+
+        </style>
     </head>
     <body>
         <div class="container-fluids">
@@ -36,7 +47,8 @@
                     <li class="nav-item">
                         <div class="dropdown show">
                             <a href="" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"> 
-                                <i class="fas fa-bars fa-lg"></i> 
+                                <!-- <i class="fas fa&#45;bars fa&#45;lg"></i>  -->
+                                <span class="material-icons">menu</span>
                             </a>
                         </div>
                     </li>
@@ -58,7 +70,10 @@
 
                         <li class="nav-item">
                             <div class="btn-group dropdown show">
-                                <a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <span class="material-icons">shopping_cart</span>
+                                    <!-- <i class="fas fa&#45;shopping&#45;cart fa&#45;lg"></i> -->
+                                </a>
                                 <ul class = "dropdown-menu dropdown-menu-end px-4">
                                     <li>cart</li>
                                     <hr class="dropdown-divider">
@@ -72,7 +87,10 @@
                         </li>
                         <li class="nav-item">
                             <div class="btn-group dropdown show">
-                                <a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="fas fa-bell fa-lg"></i></a>
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <!-- <i class="fas fa&#45;bell fa&#45;lg"></i> -->
+                                    <span class="material-icons">notifications</span>
+                                </a>
                                 <ul class = "dropdown-menu dropdown-menu-end px-2">
                                     <li>notification</li>
                                     <hr class="dropdown-divider">
@@ -81,7 +99,10 @@
                         </li>
                         <li class="nav-item">
                             <div class="btn-group dropdown show">
-                                <a class="nav-link" href="#" data-bs-toggle="dropdown" data-bs-display="statistatic"><i class="fas fa-user-circle fa-lg"></i></a>
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown" data-bs-display="statistatic">
+                                    <span class="material-icons">account_circle</span>
+                                    <!-- <i class="fas fa&#45;user&#45;circle fa&#45;lg"></i> -->
+                                </a>
                                 <ul class = "dropdown-menu dropdown-menu-end px-2">
                                     <li>Profile Name</li>
                                     <hr class="dropdown-divider">
@@ -98,12 +119,22 @@
 <span class="border">
                     <div id="sidebar" class="">
                         <div class="nav flex-column py-3">
-                            <a href="home.html" class="nav-link collapsed" data-bs-toggle="" ><i class="fas fa-house-user"></i> Home </a>
-                            <a href="#menu2" class="nav-link collapsed" data-bs-toggle="collapse" ><i class="fas fa-shopping-cart"></i> Cart</a>
+                                <a href="home.html" class="nav-link collapsed" data-bs-toggle="" >
+                                <span class="material-icons" style="vertical-align:-6px;">home</span>
+                                <!-- <i class="fas fa&#45;house&#45;user"></i>  -->
+                                Home </a>
+                            <a href="#menu2" class="nav-link collapsed" data-bs-toggle="collapse" >
+                                <!-- <i class="fas fa&#45;shopping&#45;cart"></i>  -->
+                                <span class="material-icons">shopping_cart</span>
+                                Cart</a>
                         </div>
                         <div class="nav flex-column py-3">
                             <span class="border-top">
-                                <a href="#menu1" class="nav-link collapsed" data-bs-toggle="collapse"><i class="fas fa-chevron-left"></i> Back to ERP</a>
+                                <a href="#menu1" class="nav-link collapsed" data-bs-toggle="collapse">
+                                    <span class="material-icons">chevron_left</span>
+                                    <!-- <i class="fas fa&#45;chevron&#45;left"></i>  -->
+                                    Back to ERP
+                                </a>
                             </span>
                         </div>
                     </div>
@@ -115,7 +146,10 @@
             <div class="container-fluid py-4">
                 <div class="row">
                     <div class="col-md-3">
-                        <h6><i class="fas fa-sort-amount-down-alt"></i> Filter</h6>
+                        <h6>  
+                            <span class="material-icons">filter_list</span>Filter
+                            <!-- <i class="fas fa&#45;sort&#45;amount&#45;down&#45;alt"></i> Filter -->
+                        </h6>
                         <div class="card">
                             <div class="card-body">
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
