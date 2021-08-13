@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>
+        </title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "searching":false,
+            "dom":'rtip',
+            "info":false
+
+        });
+    } );
+    </script>
+        <style>
+            input[type=search]:focus{
+                box-shadow: 0px 0px 5px rgba(255,255,255,0);
+                border: 3px solid rgba(255,165,0);
+            }
+            .material-icons{
+                vertical-align:-6px;
+            }
+            .navbar-nav .nav-item .material-icons{
+                transition: all 300ms;
+            }
+            .navbar-nav .nav-item:hover .material-icons:hover{
+                background-color:#fff !important;
+                color:#000;
+                border-radius:5px;
+            }
+            a[aria-expanded="true"] .material-icons{
+                background-color:#fff !important;
+                color:#000 !important;
+                border-radius:5px;
+            }
+            div#offcanvasExample[aria-modal="true"] #sidebaricon .material-icons{
+                background-color:#fff !important;
+                color:red !important;
+                border-radius:5px;
+            }
+            .vr{
+              /* margin-left: 20px; */
+              /* margin-right: 20px; */
+              height: 50px;
+              border: 0;
+              border-left: 1px solid #cccccc;
+              display: inline-block;
+              vertical-align: middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluids">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-2">
+            <div class="container-fluid px-5"> 
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="dropdown show">
+                        <a href="" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"> 
+                                <span class="material-icons">menu</span>
+                        </a>
+                        </div>
+                    </li>
+                    <li class="nav-item show">
+                        <a class="nav-link navbar-brand" href="">Data <strong>Bank</strong></a>
+                    </li>
+                </ul>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" align="center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0" align="center">
+                        <li>                            
+                            <input class="form-control searchbox" type="search" placeholder="Search" aria-label="Search" size="50">
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <div class="btn-group dropdown show">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <i class="fas fa-shopping-cart fa-lg">
+                                    <span class="material-icons">shopping_cart</span>
+                                    </i></a>
+                                <ul class = "dropdown-menu dropdown-menu-end px-4">
+                                    <li>cart</li>
+                                    <hr class="dropdown-divider">
+                                    <li>Pasir</li>
+                                    <li>Pasir</li>
+                                    <li>Pasir</li>
+                                    <hr class="dropdown-divider">
+                                    <li>View All</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="btn-group dropdown show">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+
+                                    <span class="material-icons">notifications</span>
+                                </a>
+                                <ul class = "dropdown-menu dropdown-menu-end px-2">
+                                    <li>notification</li>
+                                    <hr class="dropdown-divider">
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="btn-group dropdown show">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown" data-bs-display="statistatic">
+                                    <span class="material-icons">account_circle</span>
+                                </a>
+                                <ul class = "dropdown-menu dropdown-menu-end px-2">
+                                    <li>Profile Name</li>
+                                    <hr class="dropdown-divider">
+                                    <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div style="width:400px;top:8px;background-color:#f4f6f7;" class="offcanvas offcanvas-start my-5 rounded" tabindex="-1" id="offcanvasExample" data-bs-keyboard="false" data-bs-backdrop="false" aria-labelledby="offcanvasExampleLabel">
+<span class="border">
+                    <div id="sidebar" class="">
+                        <div class="nav flex-column py-3">
+                            <a href="home.html" class="nav-link collapsed" data-bs-toggle="" >
+                                <span class="material-icons" style="vertical-align:-6px;">home</span>
+                                Home </a>
+                            <a href="#menu2" class="nav-link collapsed" data-bs-toggle="collapse" >
+
+                                <span class="material-icons">shopping_cart</span>
+                                <i class="fas fa-shopping-cart"></i> Cart
+                            </a>
+                        </div>
+                        <div class="nav flex-column py-3">
+                            <span class="border-top">
+                                <a href="#menu1" class="nav-link collapsed" data-bs-toggle="collapse">
+                                    <span class="material-icons">chevron_left</span>
+                                    Back to ERP</a>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container-fluids px-5">
+            <div class="px-4 py-4">
+              <div class="row border">
+                <div class="col-md-1 py-4">
+                    <img src="https://picsum.photos/100/100?random=1">
+                </div>
+                <div class="col-7 py-4">
+                    <ul>
+                        <li>
+                            <span class="material-icons">business</span> PT Suka Pasir Indonesia
+                        </li>
+                        <li>
+                            Alamat Perusahaan
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 py-2 mt-2 mb-2 d-grid gap-2 border-start">
+                    <ul>
+                        <li>
+                            <span class="material-icons">paid</span> 412
+                            <span class="material-icons ps-5">category</span> 1400
+                        </li>
+                        <li class="py-2">
+                            <button class="btn btn-outline-primary btn-sm px-4">
+                            <span class="material-icons">contact_phone</span> Partner Contact</button>
+                        </li>
+                        <li style="color:#a4a4a4;font-size:14px;">
+                            <span class="material-icons">link</span> www.pasirnesia.com 
+                        </li>
+                    </ul>
+                </div>
+              <div class="col-md-2 py-2 mt-2 mb-2 border-start">
+                    <ul>
+                        <li>
+                            Partner Brocure
+                        </li>
+                        <li class="py-2">
+                            <div class="">
+                            <button class="pe-2 btn btn-success btn-sm">
+                            <span class="material-icons">download</span> Download Brocure</button>
+                            </div>
+                        </li>
+                        <li style="color:#a4a4a4;font-size:14px;">
+                            Last update date 
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- <div class="container&#45;fluid px&#45;5"> -->
+            <div class="container-fluid py-0">
+                <div class="row">
+                  
+                    <div class="col-md-9">
+                    <table id="example" class="spacing-table">
+                      <thead>
+                          <tr class="col">
+                              <th scope="col"><input type="checkbox" class="form-check-input"></th>
+                              <th scope="col">material</th>
+                              <th scope="col">partner</th>
+                              <th scope="col">price</th>
+                              <th scope="col">contract date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            <!-- <div class="card border&#45;light" style="max&#45;width:"> -->
+                            <!--   <div class="row"> -->
+                            <!--     <div class="col&#45;md&#45;4" align="left"> -->
+                            <!--         <img src="https://dummyimage.com/600x600/000/fff" class="img&#45;thumbnail" alt="..." width="80px" height="80px"> -->
+                            <!--     </div> -->
+                            <!--     <div class="col&#45;md&#45;7" align="left"> -->
+                            <!--         <p class="card&#45;title">pasir</p> -->
+                            <!--         <p class="card&#45;text">11223344</p> -->
+                            <!--     </div> -->
+                            <!--   </div> -->
+                            <!-- </div> -->
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                        <tr>
+                          <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                          <td>
+                              <ul class="list-group">
+                                  <li>pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>pt suka pasir</li>
+                                  <li>kantor pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                              <ul class="list-group">
+                                  <li>rp.560.000,00</li>
+                                  <li>1000 m3</li>
+                              </ul>
+                            </td>
+                            <td>14 maret 2021</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div align="right">
+                        <button style="width:200px;" class="btn btn-primary btn-sm">
+                            <span class="material-icons">shopping_cart</span> add to cart</button>
+                        <button style="width:200px;" class="btn btn-success btn-sm">
+                            <span class="material-icons">download</span> export</button>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>  
+                            <span class="material-icons">filter_list</span>filter
+                        </h6>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="accordion accordion-flush" id="accordionflushexample">
+
+                                    <div class="accordion-item">
+                                        <div id="flush-collapsethree" 
+                                            class="accordion-collapse collapse show" aria-labelledby="flush-headingone" data-bs-parent="#accordionflushexample">
+                                            <div class="accordion-body">
+                                                <input class="form-control" type="text" placeholder="search on partner" id="projectname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                         <h2 class="accordion-header" id="flush-headingone">
+                                            <button 
+                                                class="accordion-button collapsed" 
+                                                type="button" data-bs-toggle="collapse" 
+                                                data-bs-target="#flush-collapseone" 
+                                                aria-expanded="false" aria-controls="flush-collapseone">
+                                            category 
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseone" 
+                                            class="accordion-collapse collapse show" aria-labelledby="flush-headingone" data-bs-parent="#accordionflushexample">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    material 
+                                                  </label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    jasa 
+                                                  </label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    lainnya 
+                                                  </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                         <h2 class="accordion-header" id="flush-headingthree">
+                                            <button class="accordion-button collapsed" 
+                                                type="button" 
+                                                data-bs-toggle="collapse" 
+                                                data-bs-target="#flush-collapsethree" 
+                                                aria-expanded="false" aria-controls="flush-collapseone">
+                                            project location
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapsethree" 
+                                            class="accordion-collapse collapse show" aria-labelledby="flush-headingone" data-bs-parent="#accordionflushexample">
+                                            <div class="accordion-body">
+                                                <input class="form-control" type="text" placeholder="province" id="projectname">
+                                            </div>
+                                            <div class="accordion-body">
+                                                <input class="form-control" type="text" placeholder="city" id="projectname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                         <h2 class="accordion-header" id="flush-headingtwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsetwo" aria-expanded="false" aria-controls="flush-collapseone">
+                                                location 
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapsetwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingone" data-bs-parent="#accordionflushexample">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    kantor pusat 
+                                                  </label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    div gedung 
+                                                  </label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    div epc 
+                                                  </label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    div infrastruktur 1 
+                                                  </label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" value="" id="flexcheckdefault">
+                                                  <label class="form-check-label" for="flexcheckdefault">
+                                                    div infrastruktur 2 
+                                                  </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                         <h2 class="accordion-header" id="flush-headingthree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsethree" aria-expanded="false" aria-controls="flush-collapseone">
+        project 
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapsethree" class="accordion-collapse collapse show" aria-labelledby="flush-headingone" data-bs-parent="#accordionflushexample">
+                                            <div class="accordion-body">
+                                                <input class="form-control" type="text" placeholder="project name" id="projectname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                         <h2 class="accordion-header" id="flush-headingfour">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapseone">
+       contract date range 
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapsefour" class="accordion-collapse collapse show" aria-labelledby="flush-headingone" data-bs-parent="#accordionflushexample">
+                                            <div class="accordion-body">
+                                                <input class="form-control" type="text" placeholder="from" id="datefrom">
+                                            </div>
+                                            <div class="accordion-body">
+                                                <input class="form-control" type="text" placeholder="to" id="dateto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div id="" class="" aria-labelledby="flush-headingone" data-bs-parent="">
+                                            <div class="accordion-body">
+                                                <div class="d-grid col-12 gap-2 mx-auto pl-2">
+                                                    <button type="button" class=" form-control btn btn-success mx-auto">search with n filter</button>
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

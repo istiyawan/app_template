@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>
+        </title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../library/lightslider-master/src/css/lightslider.css" />                  
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+        <script src="../library/lightslider-master/src/js/lightslider.js"></script>
+        <script>
+        $(document).ready(function() {
+            $("#lightSlider").lightSlider({
+                item:4,
+                prevHtml:'<span class=material-icons>arrow_circle_left</span>',
+                nextHtml:'<span class=material-icons>arrow_circle_right</span>',
+                pager:false
+            }); 
+            $('#cartTable').DataTable({
+                "searching":false,
+                "dom":'rtip',
+                "info":false
+
+            });
+        } );
+    </script>
+    </head>
+    <body>
+        <!-- <div class="containers&#45;fluids"> -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-2 position-fixed-top">
+            <div class="container-fluid px-5"> 
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="dropdown show">
+                        <a href="" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"> 
+                                <span class="material-icons">menu</span>
+                        </a>
+                        </div>
+                    </li>
+                    <li class="nav-item show">
+                        <a class="nav-link navbar-brand" href="">Data <strong>Bank</strong></a>
+                    </li>
+                </ul>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" align="center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0" align="center">
+                        <li>                            
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" size="50">
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <div class="btn-group dropdown show">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <i class="fas fa-shopping-cart fa-lg">
+                                    <span class="material-icons">shopping_cart</span>
+                                    </i></a>
+                                <ul class = "dropdown-menu dropdown-menu-end px-4">
+                                    <li>cart</li>
+                                    <hr class="dropdown-divider">
+                                    <li>Pasir</li>
+                                    <li>Pasir</li>
+                                    <li>Pasir</li>
+                                    <hr class="dropdown-divider">
+                                    <li>View All</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="btn-group dropdown show">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                                    <span class="material-icons">notifications</span>
+                                </a>
+                                <ul class = "dropdown-menu dropdown-menu-end px-2">
+                                    <li>notification</li>
+                                    <hr class="dropdown-divider">
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="btn-group dropdown show">
+                                <a class="nav-link" href="#" data-bs-toggle="dropdown" data-bs-display="statistatic">
+                                    <span class="material-icons">account_circle</span>
+                                </a>
+                                <ul class = "dropdown-menu dropdown-menu-end px-2">
+                                    <li>Profile Name</li>
+                                    <hr class="dropdown-divider">
+                                    <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div 
+            style="width:400px;top:8px;background-color:#f4f6f7;" 
+            class="offcanvas offcanvas-start my-5 rounded" 
+            tabindex="-1" id="offcanvasExample" data-bs-keyboard="false" data-bs-backdrop="false" aria-labelledby="offcanvasExampleLabel">
+            <span class="border">
+            <div id="sidebar" class="">
+                <div class="nav flex-column py-3">
+                    <a href="home.html" class="nav-link collapsed" data-bs-toggle="" >
+                        <span class="material-icons" style="vertical-align:-6px;">home</span>
+                        Home </a>
+                    <a href="#menu2" class="nav-link collapsed" data-bs-toggle="collapse" >
+
+                        <span class="material-icons">shopping_cart</span>
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a>
+                </div>
+                <div class="nav flex-column py-3">
+                    <span class="border-top">
+                        <a href="#menu1" class="nav-link collapsed" data-bs-toggle="collapse">
+                            <span class="material-icons">chevron_left</span>
+                            Back to ERP</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+        <div class="container-fluid px-5">
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <div class="col-10">
+                        <span class="material-icons">shopping_cart</span>
+                            Cart
+                        <hr class="divider"></hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <span class="material-icons">business</span> PT Suka Pasir  Jakarta
+                    </div>
+                    <div class="col-md-10">
+                    <table id="example" class="cart-items">
+                      <tbody>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <ul class="list-group">
+                                  <li>Pasir</li>
+                                  <li>112233445566</li>
+                              </ul>
+                            </td>
+                            <td >
+                              <ul class="list-group">
+                                  <li>PT Suka Pasir</li>
+                                  <li>Kantor Pusat</li>
+                              </ul>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">remove</span></button>
+                                    <input type="text" class="form-control" aria-label="">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><span class="material-icons">add</span></button>
+                                    <span class="input-group-text">M3</span>
+                                </div>
+                            </td>
+                            <td>Total :Rp.560.000 </td>
+                            <td><span class="btn material-icons">clear</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <hr class="divider" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">8 items</div>
+                        <div class="col-md-3" align="">Total Price Rp. 67.200.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
